@@ -496,7 +496,12 @@ td input{
 
 /* 表单 */
 fieldset {
+	width: 390px;
 	margin-bottom:10px;
+}
+.form1{
+	text-align: center;
+	display: inline-block;
 }
 
 

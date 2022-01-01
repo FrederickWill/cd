@@ -55,7 +55,7 @@
 					<li><a href="shipin.html"><img src="img/shipin.png"/>&nbsp;视频</a></li>
 					<li><a href="xiangxi.html"><img src="img/xiangqing.png" />&nbsp;乐队介绍</a></li>
 					<li><a href="form.html"><img src="img/biaodan.png" />&nbsp;表单</a></li>     
-					<li><a href="calculator.html"><img src="img/wode.png" />&nbsp;关于</a></li>    
+					<!-- <li><a href="calculator.html"><img src="img/wode.png" />&nbsp;关于</a></li>     -->
 				</ul>
 			</div>
 		</div>
@@ -64,65 +64,68 @@
 		<!--首页 @联系我们处 收集的信息开始-->
 		<div class="all">
 			<div class="smallall">
+				<img src="img/0001.jpg" alt="" style="width: 380px;height: 450px; display: inline-block;margin-left: 50px;" >
+				<img src="img/0002.jpg" alt="" style="width: 380px;height: 450px;display: inline-block;margin-left: 50px;margin-right: 50px;">
 
 			<!-- 表单开始 -->
-			<form name="formTest" action="save.php" method="post"  onreset="alert('唉，又要重填')" onsubmit="alert('我被送到服务端去啦！')" enctype="multipart/form-data"  >
+			<form class="form1"name="formTest" action="save.php" method="post"  onreset="alert('唉，又要重填')" onsubmit="alert('我被送到服务端去啦！')" enctype="multipart/form-data"  >
 				<fieldset>
-					<legend>text 文本框</legend>
+					<legend>我最喜欢的一首歌</legend>
 						<input type="text" name="textTest"
-						value="有七朵玫瑰花" maxlength="9"
+						value="FIX YOU" maxlength="9"
 						size="20"/>
 						<input type="button" value="输入了什么？"
 						onclick="iknow('text')">
 				</fieldset>
 			
 				<fieldset>
-					<legend>textarea 多行文本框</legend>
+					<legend>谁是酷玩乐队主唱</legend>
+						<input type="radio" name="radioTest" checked="checked"/>克里斯马汀
+						<input type="radio" name="radioTest" />断眉
+						<input type="radio" name="radioTest"   />萌德
+						<input type="radio" name="radioTest" />灰森
+						<input type="button" value="提交" onclick="iknow('radio')">
+				</fieldset>
+			
+				<fieldset>
+					<legend>主要成员</legend>
+						<input type="checkbox" name="checkboxTest" checked="checked" />主唱克里斯·马汀
+						<input type="checkbox" name="checkboxTest" />贝斯手盖伊·贝瑞曼
+						<input type="checkbox" name="checkboxTest" />吉他手强尼·邦蓝
+						<input type="checkbox" name="checkboxTest" checked="checked"/>鼓手威尔·查平
+						<input type="button" value="谁被选中了？" onclick="iknow('checkbox')">
+				</fieldset>
+			
+				<fieldset>
+					<legend>你最喜欢的一首歌</legend>
+						<select name="comboxTest">
+							<option>fix you</option>
+							<option>yellow</option>
+							<option selected="true">scientist</option>
+						</select>
+						<input type="button" value="确认" onclick="iknow('combox')">
+				</fieldset>
+			
+				<fieldset>
+					<legend>你听过哪首歌</legend>
+						<select name="listboxTest" multiple="true">
+							<option>Magic</option>
+							<option selected="true">Gravity</option>
+							<option selected="true">Everglow</option>
+						</select>
+						<input type="button" value="确认" onclick="iknow('listbox')">
+				</fieldset>
+
+				<fieldset>
+					<legend>备注</legend>
 						<textarea name="textareaTest"
 							cols="20"
-							rows="10" >好一朵玫瑰花呀
+							rows="5" >
 						</textarea>
 						<input type="button" value="输入了什么？" onclick="iknow('textarea')">
 						<input type="button" value="执行我！" onclick="eval(document.forms[0].textareaTest.value)">
 				</fieldset>
 			
-				<fieldset>
-					<legend>Radio 单选按钮</legend>
-						<input type="radio" name="radioTest" checked="checked"/>
-						<input type="radio" name="radioTest" />
-						<input type="radio" name="radioTest"   />
-						<input type="radio" name="radioTest" />
-						<input type="button" value="谁被选中了？" onclick="iknow('radio')">
-				</fieldset>
-			
-				<fieldset>
-					<legend>CheckBox 多选按钮</legend>
-						<input type="checkbox" name="checkboxTest" checked="checked" />
-						<input type="checkbox" name="checkboxTest" />
-						<input type="checkbox" name="checkboxTest" />
-						<input type="checkbox" name="checkboxTest" checked="checked"/>
-						<input type="button" value="谁被选中了？" onclick="iknow('checkbox')">
-				</fieldset>
-			
-				<fieldset>
-					<legend>ComBox 下拉框</legend>
-						<select name="comboxTest">
-							<option>网络技术</option>
-							<option>网络系统管理</option>
-							<option selected="true">信息安全</option>
-						</select>
-						<input type="button" value="谁被选中了？" onclick="iknow('combox')">
-				</fieldset>
-			
-				<fieldset>
-					<legend>ListBox 列表框</legend>
-						<select name="listboxTest" multiple="true">
-							<option>网络技术</option>
-							<option selected="true">网络系统管理</option>
-							<option selected="true">信息安全</option>
-						</select>
-						<input type="button" value="谁被选中了？" onclick="iknow('listbox')">
-				</fieldset>
 			
 				<input type="submit" value="提交到服务端"/>
 				<input type="reset" value="重新填写"/>
@@ -144,7 +147,8 @@
 							case "radio":
 								for (var i=0;i<f.radioTest.length;i++)
 									if (f.radioTest[i].checked == true)
-										alert("第"　+　(i+1)  +"项被选中了！")
+										alert("恭喜你答对了")
+
 								break;
 			
 							case "checkbox":
@@ -158,7 +162,7 @@
 			
 							case "combox":
 								var i=f.comboxTest.selectedIndex
-								alert("第"　+ (i+1) + "项被选中了:"
+								alert("真巧我也喜欢 "
 								+ f.comboxTest.options[i].text);
 								break;
 			
@@ -168,7 +172,7 @@
 									if (f.listboxTest.options[i].selected == true)
 										rets.push(f.listboxTest.options[i].text);
 			
-								alert("被选中的项目:"　+　rets.join(',')  )
+								alert("听过"　+　rets.join(',')+"我们就是一家人了"  )
 								break;
 					}
 				}
