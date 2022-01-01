@@ -12,31 +12,126 @@
                  var c=document.getElementById('Username').value;
                  var d=document.getElementById('Password').value;
                  if(a!=c)
-                      alert("name error!");
+                      alert("用户名错误!");
                  else if(b!=d)
-                      alert("password error!");
-                 else {alert("Welcome!");
+                      alert("密码错误!");
+                 else {alert("欢迎来到酷玩世界!");
                  window.location.href='shouye.html'};
              }
+
+// 以下为cookie
+$(function () {
+ 
+ initView();
+
+ $("#log").click(function () {
+     if ($("#rememberMe").is(":checked")) {
+         setCookie("cookie_Username", $("#Username").val());
+         setCookie("cookie_password", $("#Password").val());
+         setCookie("rememberMe", true);
+     } else {
+         delCookie("cookie_Username");
+         delCookie("cookie_password");
+         delCookie("rememberMe");
+     }
+
+
+     window.location.reload()
+ });
+});
+
+function initView() {
+ if (getCookie("cookie_Username")) {
+     $("#Username").val(getCookie("cookie_Username"));
+ }
+ if (getCookie("cookie_password")) {
+     $("#Password").val(getCookie("cookie_password"));
+ }
+ if (getCookie("rememberMe")) {
+     $("#rememberMe").attr("checked", getCookie("rememberMe"));
+ }
+ $("#Username").focus(function () {
+     this.select();
+ });
+ $("#Password").focus(function () {
+     this.select();
+ });
+}
+
+/**
+* 写入cookie
+* @param name  cookie 名
+* @param value  cookie 值
+*/
+function setCookie(name, value) {
+ var Days = 30; //此 cookie 将被保存 30 天
+ var exp = new Date();
+ exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+ document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+}
+/**
+* 删除cookie
+* @param name
+*/
+function delCookie(name) {
+ var exp = new Date();
+ exp.setTime(exp.getTime() - 1);
+ var cval = getCookie(name);
+ if (cval != null) document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+}
+/**
+* 读取cookie
+* @param name
+* @returns
+*/
+function getCookie(name) {
+ var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+ if (arr != null)
+     return unescape(arr[2]);
+ return null;
+}
+
+        
         </script>
+
+
 	</head>	
 	<body>
+        <div class="bigall">
+			<!-- 背景开始 -->
+			<video  id="v1" autoplay loop muted style="position: fixed;right: 0px;bottom: 0px;min-width: 100%;min-height: 100%;height: auto;width: auto;z-index:-11">
+				<source   src="img/1.mp4" />
+			</video>
+			<!-- 背景结束 -->
 
-		<div id="login111">
-            <h1>log in</p><br/>  
-                <div>
-                    <h2>name(acacacac)</h2>
+                <div id="login111">
+                <div class="login">
+                    <h1>Login</h1>
+                    <h2>name(123)</h2>
                     <input type="text" id="username" placeholder="请输入登入名"> <br/> 
-                    <input type="hidden" id="Username" value="acacacac">
+                    <input type="hidden" id="Username" value="123">
+                    
                     <h2>password(123)</h2>
                     <input type="text" id="password" placeholder="请输入密码"> <br/> <br/> 
                     <input type="hidden" id="Password" value="123"></td>
+                    
+                    <p>
+                        <input type="checkbox" id="rememberMe">
+                        <span style="vertical-align: middle">记住我</span>
+                    </p>
+
+
+
                     <button onclick='check()' id="log">登陆</a></button>
                 </div>
+            </div>
         </div>
-	
+        
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-	 
+
 	</body>
+
 </html>
+
 

@@ -1,8 +1,39 @@
+/* 背景开始 */
+*{  
+	margin: 0px;  
+	padding: 0px;  
+}  
+.banner video{
+	max-width: 50%;  
+	max-height: 50%; 
+	display: inline-block;  
+
+}
+
+/* 
+.bigall video{  
+	position: fixed;  
+	right: 0px;  
+	bottom: 0px;  
+	min-width: 100%;  
+	min-height: 100%;  
+	height: auto;  
+	width: auto;  
+	z-index:-11
+}  */
+
+
+source{  
+	min-width: 100%;  
+	min-height: 100%;  
+	height: auto;  
+	width: auto;  
+} 
+/* 背景结束 */
+
 
 body{
-	width: 1000px;
-	background-color:#FFDEAD;
-	margin: 0 auto;
+	width: 100%;
 }
 .clearfix:after{
 	content:"";
@@ -13,19 +44,26 @@ body{
 	zoom: 1;
 }
 .all{
-	width: 1000px;
-	height:100%;
-	background-color: cornsilk;
+	width: 1360px;
+	margin-left: auto;
+	margin-right: auto;
+    background-color: #ffffff4f;
+    opacity:0.89;
+
 }
+.smallall{
+	background-color: #DBC9C978;
+}
+
 .t{
-	width: 1000px;
+	width: 1360px;
 	height: 20px;
-	background-color: sandybrown;
+	background-color: #DBC9C978;
 }
 #bannerend{
-	width: 1000px;
+	width: 1360px;
 	height: 40px;
-	background-image: linear-gradient(sandybrown,#FFDEAD);
+	background-image: linear-gradient(#DBC9C9,#FFDEAD);
 }
 
 /*顶部导航栏总设计开始*/
@@ -33,7 +71,7 @@ body{
 	width: 100%;
 	height: 100px;
 	background-color: white;	
-	color: orange;
+	color: #DBC9C978;
 	
 }
 /*顶部导航栏总设计结束*/
@@ -59,18 +97,27 @@ body{
 	list-style: none;
 	
 }
+.top img{
+	width: 25px;
+	height: 25px;
+
+}
+.nav img{
+	width: 25px;
+	height: 25px;
+}
 .nav li{
 	border-left:1px gainsboro dotted ;
-	padding:5px 20px;
+
 	float:left;
 }
 .nav a{
-	color: orange ;
+	color: #DBC9C978 ;
 	font: 20px "微软雅黑" bolder;
 	text-decoration: none;
 }
 .nav a:link{
-	color: orange;
+	color: #DBC9C978;
 }
 .nav a:visited{
 	color: gray
@@ -83,9 +130,13 @@ body{
 
 /*banner设计开始*/
 .banner1{
-	margin-left: -375px;
+	width: 660px;
+	height: 480px;
+
 }
 .banner2{
+	width: 660px;
+	height: 480px;
 	position: absolute;
 	/* margin-left: -100px; */
 }
@@ -96,8 +147,8 @@ body{
 .content .left{
     float: left;
 }
- h1{
-	width: 1000px;
+.content h1{
+	width: 1360px;
 	text-align: center;
 	font: 24px bolder "微软雅黑";
 	color: grey;
@@ -108,35 +159,42 @@ body{
 	float:right;
 	margin-top: 10px;
 }
-.content .wzfl .a{
-	margin-top: 40px;
-	margin-right: 30px;
+
+.content .jbxx .a{
+	width: 630px;
+	height: 370px;
+	display: inline-block;
 }
 .content .zpjs .a{
-	margin-right: 30px;
+	width: 330px;
+	height: 200px;
+	display: inline-block;
+
 }
 .content .bcfz .a{
 	margin-top: 100px;
 	margin-right: 30px;
 }
-.content .wzfl,.content .zpjs,.content .bcfz{
-	border: dashed sandybrown;
+.content .jbxx,.content .zpjs,.content .bcfz{
+	border: dashed #DBC9C978;
 	width: 640px;
 	line-height: 40px;
 	margin: 5px 5px;
-	background-color: white;
 }
-.content .wzfl{
+.content .jbxx{
 	position: relative;
-	height: 400px;
+	height: 420px;
+	width: 1360px;
 }
 .content .zpjs{
 	height: 250px;
+	width: 1360px;
 	
 }
 .content .bcfz{
-	border-right: dashed sandybrown;
+	border-right: dashed #DBC9C978;
 	height:450px ;
+	width: 1360px;
 }
 .content h2{
 	font: 25px bold "微软雅黑";
@@ -151,20 +209,12 @@ body{
 	color: grey;
 }
 .content a:hover{
-	color: darkorange;
+	color: dark#DBC9C978;
 }
 .content a:visited{
-	color: orangered;
+	color: #DBC9C978;
 }
-.right{
-	float: left;
-	width: 300px;
-	height: 1120px;
-	background-color: cornsilk;
-	border: dashed sandybrown ;
-	margin: 3.5px;
-	background-color: white;
-}
+
 .content .right p{
 	text-align: center;
 }
@@ -185,15 +235,16 @@ table {
 /*设置联系栏开始 */
 .contact{
 	margin-top: 20px;
-	background-color: cornsilk;
-	width: 1000px;
+	background-color: #DBC9C978;
+
+	width: 1360px;
 	height:540px;
 }
 .contact .c1,.contact .c2,.contact .c3{
 	float:left;
 	width: 310px;
 	height: 540px;
-	border: solid 2px orange;
+	border: solid 2px #DBC9C9;
 	margin: 0 9px;
 	background-color: seashell;
 }
@@ -232,7 +283,7 @@ ul{
 	padding-left: 12px;
 }
 .lianxi img{
-	border: solid 2px orange;
+	border: solid 2px #DBC9C9;
 }
 .c1 h2{
 	color: grey;
@@ -241,7 +292,7 @@ ul{
 	margin-left: 20px;
 }
 .contact h2{
-	color: orange;
+	color: #DBC9C9;
 	text-align: center;	
 	font: "微软雅黑" 30px bolder;
 }
@@ -279,10 +330,12 @@ ul{
 
 /*设置otherfruit部分开始*/
 .otherfruit{
-	width: 1000px;
-	background-color: sandybrown;
+	width: 1360px;
+	height: 200px;
+	background-color: #DBC9C978;
+	display: inline-block;
 }
-.otherfruit p{
+/* .otherfruit p{
 	font: "微软雅黑" bolder ;
 	font-size:20px ;
 	color: black;
@@ -291,17 +344,17 @@ ul{
 }
 .otherfruit li{
 	float: right;
-	border: solid sandybrown 10px;
+	border: solid #DBC9C9 10px;
 	border-collapse: collapse;
-}
+} */
 
 /*设置otherfruit部分结束*/
 
 /*设置底部*/
 .bottom{
-	width: 1000px;
-	height: 100px;
-	background-color: sandybrown;
+	width: 1360px;
+	height: 120px;
+	background-color: #dbc9c978;
 	border-top: 1px solid black;
 }
 .bottom p{
@@ -312,8 +365,8 @@ ul{
 
 
 /*form.html的shoujibiao样式设计*/
-.shoujibiao{
-	width: 1000px;
+/* .shoujibiao{
+	width: 1360px;
 	height: auto;
 }
 .name111{
@@ -343,7 +396,7 @@ td input{
 .yijian input{
 	width: 500px;
 	height: 30px;
-}
+} */
 
 /* calculator.html*/
 #head{
@@ -356,28 +409,68 @@ td input{
 }
 
 #show input{
-	width:511px;
-	height:60px;
+	width:311px;
+	height:50px;
 	font-size:30px;
 	/* margin-bottom: 20px; */
 }
 
 #cuttom table{
-	margin-left: 225px;
+
+	margin-left: 500px;
 	margin-top: 10px;
+
 }
 #cuttom input{
-	width: 75px;
-	height: 70px;
-	font-size: 28px;
+	width: 35px;
+	height: 30px;
+	font-size: 21px;
 	margin: 5px;
 }
 #cuttom input:hover{
-	background: lightgray;
+	background: #dbc9c9;
 }
 
 /* login.html */
-#login111 h1{
+
+/* 让页面所有元素的padding和margin都设置为0 */ 
+#login111 {margin:0;padding:0;box-sizing:border-box;}
+/* 设置背景图，字体设置为微软雅黑 */ 
+#login111 {background:url(bg.jpg);font-family: "微软雅黑", sans-serif;}
+/* 引用图片高度设置为28px，就是页面最上方像屋檐一样的黑色图 */ 
+#login111 {background:url(topbg.jpg);height:28px;}
+/* 整个登录框的css，并使用绝对定位居中 */ 
+#login111 .login { 
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -150px 0 0 -150px;
+	width:300px;
+	height:300px;
+}
+/* 前面分析过的h1标签的css，text-shadow设置阴影使文字更好看，letter-spacing设置字符间距 */ 
+#login111 .login h1 { color:#555555; text-shadow: 0px 10px 8px #CDC673; letter-spacing:2px;text-align:center;margin-bottom:20px; }
+/* 两个输入框的css，border属性设置边框线粗细以及颜色，border-radius设置边框的圆角角度 */
+#login111 input{
+	padding:10px;
+	width:100%;
+	color:white;
+	margin-bottom:10px;
+	background-color:#555555;
+	border: 1px solid black;
+	border-radius:4px;
+	letter-spacing:2px;
+}
+/* 登录按钮的css，cursor:pointer当鼠标移到按钮上面时变成小手形状 */
+#login111 button{
+	width:100%;
+	padding:10px;
+	background-color:#CDC673;
+	border:1px solid black;
+	border-radius:4px;
+	cursor:pointer; 
+}          
+/* #login111 h1{
 	font-size: 20px;
 	text-align: center;
 }
@@ -399,6 +492,11 @@ td input{
 #login111 input{
 	width: 150px;
 	height: 30px;
+} */
+
+/* 表单 */
+fieldset {
+	margin-bottom:10px;
 }
 
 
@@ -408,3 +506,4 @@ td input{
         background-color:lightblue;
     }
 }
+

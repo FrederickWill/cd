@@ -33,22 +33,29 @@
 		
 	</head>	
 	<body>
+		<div class="bigall">
+			<!-- 背景开始 -->
+			<video  id="v1" autoplay loop muted style="position: fixed;right: 0px;bottom: 0px;min-width: 100%;min-height: 100%;height: auto;width: auto;z-index:-11">
+				<source   src="img/1.mp4" />
+			</video>
+			<!-- 背景结束 -->
 		<div class="all">
 			<div class="t"></div>
 			<div class="t"></div>
 		<!--header开始-->
 		
-		<div class="top ">
+		<div class="top">
 			<div class="head">
 				<img src="img/top.png" />
-				Katherine|个人博客
+				Frederick's blog
 			</div>
 			<div>
 				<ul class="nav">
-					<li><a href="https://gac0286.github.io/shouye.html"><img src="img/shouye.png" />&nbsp;首页</a></li>
-					<li><a href="https://gac0286.github.io/showac.html"><img src="img/guanyu.png" />&nbsp;详情</a></li>
-					<li><a href="https://gac0286.github.io/form.html"><img src="img/gengduo.png" />&nbsp;表单</a></li>     
-					<li><a href="https://gac0286.github.io/calculator.html"><img src="img/wode.png" />&nbsp;关于</a></li>    
+					<li><a href="shouye.html"><img src="img/shouye.png" />&nbsp;首页</a></li>
+					<li><a href="shipin.html"><img src="img/shipin.png"/>&nbsp;视频</a></li>
+					<li><a href="xiangxi.html"><img src="img/xiangqing.png" />&nbsp;乐队介绍</a></li>
+					<li><a href="form.html"><img src="img/biaodan.png" />&nbsp;表单</a></li>     
+					<li><a href="calculator.html"><img src="img/wode.png" />&nbsp;关于</a></li>    
 				</ul>
 			</div>
 		</div>
@@ -56,65 +63,148 @@
 		
 		<!--首页 @联系我们处 收集的信息开始-->
 		<div class="all">
-			<h1>意见收集表</h1>
-			<table class="shoujibiao">
-				<tr>
-					<th class="name111">姓名</th>
-					<th class="tel111">联系方式</th>
-					<th class="yijian">意见</th>
-					<th class="shanchu"></th>
-				</tr>
-				<tr>
-					<td class="name111">Katherine</td>
-					<td class="tel111">13860666600</td>
-					<td class="yijian">继续努力</td>
-					<td class="shanchu"><button  type="button" >删除</button></td>
-				</tr>
-				
-			</table>
+			<div class="smallall">
+
+			<!-- 表单开始 -->
+			<form name="formTest" action="save.php" method="post"  onreset="alert('唉，又要重填')" onsubmit="alert('我被送到服务端去啦！')" enctype="multipart/form-data"  >
+				<fieldset>
+					<legend>text 文本框</legend>
+						<input type="text" name="textTest"
+						value="有七朵玫瑰花" maxlength="9"
+						size="20"/>
+						<input type="button" value="输入了什么？"
+						onclick="iknow('text')">
+				</fieldset>
 			
-			 <table class="shoujibiao">
-				<tr>
-					<td class="name111"><input type="text"  placeholder="请输入姓名" /></td>
-					<td class="tel111"><input type="text"  placeholder="请输入联系方式" /></td>
-					<td class="yijian"><input type="text"  placeholder="请输入意见" /></td>
-					<td class="tianjia"><button type="button" id="tianjia">添加</button></td>
-				</tr>
-			</table> 
+				<fieldset>
+					<legend>textarea 多行文本框</legend>
+						<textarea name="textareaTest"
+							cols="20"
+							rows="10" >好一朵玫瑰花呀
+						</textarea>
+						<input type="button" value="输入了什么？" onclick="iknow('textarea')">
+						<input type="button" value="执行我！" onclick="eval(document.forms[0].textareaTest.value)">
+				</fieldset>
 			
+				<fieldset>
+					<legend>Radio 单选按钮</legend>
+						<input type="radio" name="radioTest" checked="checked"/>
+						<input type="radio" name="radioTest" />
+						<input type="radio" name="radioTest"   />
+						<input type="radio" name="radioTest" />
+						<input type="button" value="谁被选中了？" onclick="iknow('radio')">
+				</fieldset>
+			
+				<fieldset>
+					<legend>CheckBox 多选按钮</legend>
+						<input type="checkbox" name="checkboxTest" checked="checked" />
+						<input type="checkbox" name="checkboxTest" />
+						<input type="checkbox" name="checkboxTest" />
+						<input type="checkbox" name="checkboxTest" checked="checked"/>
+						<input type="button" value="谁被选中了？" onclick="iknow('checkbox')">
+				</fieldset>
+			
+				<fieldset>
+					<legend>ComBox 下拉框</legend>
+						<select name="comboxTest">
+							<option>网络技术</option>
+							<option>网络系统管理</option>
+							<option selected="true">信息安全</option>
+						</select>
+						<input type="button" value="谁被选中了？" onclick="iknow('combox')">
+				</fieldset>
+			
+				<fieldset>
+					<legend>ListBox 列表框</legend>
+						<select name="listboxTest" multiple="true">
+							<option>网络技术</option>
+							<option selected="true">网络系统管理</option>
+							<option selected="true">信息安全</option>
+						</select>
+						<input type="button" value="谁被选中了？" onclick="iknow('listbox')">
+				</fieldset>
+			
+				<input type="submit" value="提交到服务端"/>
+				<input type="reset" value="重新填写"/>
+				</form>
+
+				<script type="text/javascript" >
+					function　iknow(sType){
+						var f=document.forms[0];
+						//var f=document.formTest;
+						switch(sType){
+							case "text":
+								alert(f.textTest.value);
+								//f.textTest.value="这是第二个新的输入";
+								break;
+							case "textarea":
+								alert(f.textareaTest.value) ;
+								break;
+			
+							case "radio":
+								for (var i=0;i<f.radioTest.length;i++)
+									if (f.radioTest[i].checked == true)
+										alert("第"　+　(i+1)  +"项被选中了！")
+								break;
+			
+							case "checkbox":
+								var rets = [];
+								for(var i=0;i<f.checkboxTest.length;i++){
+									if (f.checkboxTest[i].checked == true)
+										rets.push(i+1);
+								}
+								alert("第"　+　rets.join(',')  +"项被选中了！")
+								break;
+			
+							case "combox":
+								var i=f.comboxTest.selectedIndex
+								alert("第"　+ (i+1) + "项被选中了:"
+								+ f.comboxTest.options[i].text);
+								break;
+			
+							case "listbox":
+								var rets = [];
+								for(var i=0;i<f.listboxTest.length;i++)
+									if (f.listboxTest.options[i].selected == true)
+										rets.push(f.listboxTest.options[i].text);
+			
+								alert("被选中的项目:"　+　rets.join(',')  )
+								break;
+					}
+				}
+				</script>
+				<!-- 表单结束 -->
+			</div>
 		</div>
 		
 		<!--首页 @联系我们处 收集的信息结束-->
 		
 		<!--其他水果-->
 		<div class="otherfruit clearfix">
-	    	<p>&nbsp;&nbsp;其他水果</p>
-	    	<ul>
-	    		<li><a href="http://www.baidu.com/link?url=wI5M30w7QyFGNoI-kUh9mU9IRvWqmf7SMDa4jZdzHCanroaEX6GroGP148sew_3SkA2pORYhwY07lPOOv9au6TH150xy5yYyfQMH9FcxlCO&wd=&eqid=b60584390000345e000000056072aff0"><img src="img/banana.png"></a></li>
-	    		<li><a href="http://www.baidu.com/link?url=YZ1KTPkPcDw8qsqZ0iOPlMmYxw-vVLJTHA3nTxPsk2ArBARYLMVrT24qpzGHblRw8p5xub5IVfxm1q8e1pPCOtPeARkEstMbM2ijqGMI9Ym&wd=&eqid=f0139b930000181a000000056072b005"><img src="img/blueberry.png"></a></li>
-	    		<li><a href="http://www.baidu.com/link?url=FexEBn1DrbeVy7FD9F6eVYLuT4hLwva7tSXzl1t-41FFLXWxtfqdeNfSnYXvD0lPHcvgNWnoPoiTOOzqbOOvbHM_nhh_Co-nT3NSjaE3JSKTGd1T5Oid-RX6TPjobIlX&wd=&eqid=c2f548e8000014f2000000056072b03c"><img src="img/kiwi.png"></a></li>
-	    		<li><a href="http://www.baidu.com/link?url=gvkh60nBlgKJNWAcrsVbITQYw34P7dOF5JRop8KOS6ep3orWdRy-CmeEWS23bs727rWBbP1fXrIBW1B2-5B1c78jEVtz-8hqcxXOi_bT6LW&wd=&eqid=e5efaafe00007106000000056072b04a"><img src="img/strawberry.png"></a></li>
-	    		<li><a href="http://www.baidu.com/link?url=ZLWoJGWmBDnKWHQ_XFN2v549-g8DAbxXhHiZzYJJwMGo5btaTUVclqdd66lrQ0Tpgg_hBrgrXlMnk3vpERPtRYpW6D_cUXztGImE0M_jT1m&wd=&eqid=8105995d000024d5000000056072b059"><img src="img/cherry.png"></a></li>
-	    		<li><a href="http://www.baidu.com/link?url=5niMsVMkzuftsWVaU9aT8SL0i11-u_JCu_SS_-hdiTbmVk-AjIBCJn28iWwq_f647lN0iY9bX9BS50h44L3EseVajxtHlOL1eCHajPjSIlS&wd=&eqid=f4053e3100006e37000000056072b06a"><img src="img/watermelon.png"></a></li>
-	    	</ul>
+	    	<p>个人最爱专辑</p>
+			<img src="img/01.jpg" alt="" style="width: 160px;height: 160px;display: inline-block;">
+			<img src="img/02.jpg" alt="" style="width: 160px;height: 160px;display: inline-block;">
 	    </div>
 	    <!--其他水果-->
 	    
 	    <!--底部设计开始-->
 	     <div class="bottom">
+			<br>
+			<br>
+			<br>
 	     	<p>
 	     		<a href="#">百度网</a> |
-            	<a href="#">新浪网</a> |
-            	<a href="#">腾迅房产</a> |
-            	<a href="#">找货网</a> |
-   		    	<a href="#">北极绒</a> |
    		    	<a href="#">阿里巴巴</a>
+				<a href="#">腾讯</a>
+				<a href="#">网易</a>
+				<a href="#">淘宝</a>
 	     	</p>
 	     	<p><a href="#">返回顶部</a></p>
-	     	<p>©Copyright 2020 guanaicheng所有</p>
+	     	<p>©Copyright 2020 Frederick所有</p>
 	     </div>
 	    <!--底部设计结束-->
 	    </div>
+	</div>
 	</body>
 </html>
 
