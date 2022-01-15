@@ -416,7 +416,39 @@ fieldset {
 	display: inline-block;
 }
 
+/* 导航栏 */
 
+.public-container-max
+{
+position: relative;
+margin: 0 auto;
+width: 1000px;
+}
+
+.s-nav
+{
+width:50px; 
+height: 50px; 
+position:fixed;
+left:50%;
+top:69%;
+margin-left:635px;
+background-color:#333333;
+}
+
+#s-nav-b
+{
+margin-top:-3px;
+}
+#s-nav-c
+{
+margin-top:-4px;
+}
+#s-nav-d
+{
+width: 50px;
+height: 50px;
+}
 
 
 /* 兼容性问题 */
