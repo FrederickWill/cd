@@ -5,9 +5,13 @@
 		<title>showshowshow</title>
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/page-blog.css" />
+		<link rel="icon" href="img/coldplay.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="img/coldplay.ico" type="image/x-icon" />
+        <link rel="bookmark" href="img/coldplay.ico" type="image/x-icon" />
 		
 	</head>	
 	<body>
+
 		<div class="bigall">
 			<!-- 背景开始 -->
 			<video  id="v1" autoplay loop muted style="position: fixed;right: 0px;bottom: 0px;min-width: 100%;min-height: 100%;height: auto;width: auto;z-index:-11">
@@ -109,7 +113,7 @@
 			</ul> -->
 		</div>
 		</div>
-		
+
 
 	
 		</div>
@@ -121,14 +125,14 @@
 		<!--其他水果-->
 		<div class="otherfruit clearfix">
 	    	<p>coldplay历年专辑</p>
-			<img src="img/01.jpg" alt="" style="width: 160px;height: 160px;display: inline-block;">
-			<img src="img/02.jpg" alt="" style="width: 160px;height: 160px;display: inline-block;">
-			<img src="img/03.jpg" alt="" style="width: 160px;height: 160px;display: inline-block;">
-			<img src="img/04.jpg" alt="" style="width: 160px;height: 160px;display: inline-block;">
-			<img src="img/05.jpg" alt="" style="width: 160px;height: 160px;display: inline-block;">
-			<img src="img/06.jpg" alt="" style="width: 160px;height: 160px;display: inline-block;">
-			<img src="img/07.jpg" alt="" style="width: 160px;height: 160px;display: inline-block;">
-			<img src="img/08.jpg" alt="" style="width: 160px;height: 160px;display: inline-block;">
+			<img class="lazy" src="img/01.jpg" alt="" style="width: 160px;height: 160px;display: inline-block;">
+			<img class="lazy" src="img/02.jpg" alt="" style="width: 160px;height: 160px;display: inline-block;">
+			<img class="lazy" src="img/03.jpg" alt="" style="width: 160px;height: 160px;display: inline-block;">
+			<img class="lazy" src="img/04.jpg" alt="" style="width: 160px;height: 160px;display: inline-block;">
+			<img class="lazy" src="img/05.jpg" alt="" style="width: 160px;height: 160px;display: inline-block;">
+			<img class="lazy" src="img/06.jpg" alt="" style="width: 160px;height: 160px;display: inline-block;">
+			<img class="lazy" src="img/07.jpg" alt="" style="width: 160px;height: 160px;display: inline-block;">
+			<img class="lazy" src="img/08.jpg" alt="" style="width: 160px;height: 160px;display: inline-block;">
 	    </div>
 	    
 	    <!--底部设计开始-->
@@ -147,6 +151,12 @@
 	     	<p>©Copyright 2020 Frederick所有</p>
 	     </div>
 	    <!--底部设计结束-->
+		<script src="js/jquery.lazyload.js"></script>
+		<script>
+			$(document).ready(function(){
+				$(".lazy").lazyload();
+			});
+		</script>
 	    </div>
 	</div>
 	</body>

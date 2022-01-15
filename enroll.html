@@ -1,95 +1,79 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8"/>
-		<title>enroll</title>
-		<link rel="stylesheet" type="text/css" href="css/enroll.css"/>
-		<style type="text/css">
+		<meta charset="utf-8">
+		<title>9种css动画</title>
+		<link rel="stylesheet" type="text/css" href="css/demo2.css"/>
+		<link rel="icon" sizes="any" mask="" href="./img/baidu.svg">
+		<style>
+			@charset "utf-8";
+			*{padding: 0;margin: 0;}
+			figure{
+				width: 33.3%;
+				height: 365px;
+				float: left;
+				overflow: hidden;
+				position: relative;
+			}
+			img{
+				height:100%;
+				transition: all 1s;
+			}
+			figure:hover img{
+				-webkit-transform: translateX(-10px);
+				-moz-transform: translateX(-10px);
+				-ms-transform: translateX(-10px);
+				-o-transform: translateX(-10px);
+				transform: translateX(-10px);
+				opacity: 0.5;
+			}
+			ul,li{
+				list-style: none;
+			}
+			h2,p,li,div{
+				position: absolute;
+				transition: all 0.5s;
+				color: #000;
+			}
+			/* 动画1 */
+			.effect1 h2{
+				
+				left:10%;
+				bottom:30%;
+				
+			}
+			.effect1 p{
+				
+				left:10%;
+				top:100%;
+				color: #000;
+			}
+			.effect1:hover h2{
+				-webkit-transform: translateY(-15px);
+				-moz-transform: translateY(-15px);
+				-ms-transform: translateY(-15px);
+				-o-transform: translateY(-15px);
+				transform: translateY(-15px);
+			}
+			.effect1:hover p{
+				/*-webkit-transform: translateY(-30px);
+				-moz-transform: translateY(-30px);
+				-ms-transform: translateY(-30px);
+				-o-transform: translateY(-30px);
+				transform: translateY(-30px);*/
+				top:80%;
+			}
 		</style>
-		
-		<script type="text/javascript">
-		//document.cookie = "username=; expires= 01 Jan 1970 00:00:00 GMT";
-		function getCookie(cname)
-		{
-		  var name = cname + "=";
-		  var ca = document.cookie.split(';');
-		  for(var i=0; i<ca.length; i++) 
-		  {
-		    var c = ca[i].trim();
-		    if (c.indexOf(name)==0) return c.substring(name.length,c.length);
-		  }
-		  return "";
-		}
-		
-		window.onload = function() {
-			// alert(22);
-			var username = document.querySelector('#username');
-			var password = document.querySelector('#password');
-			username.value = getCookie("username");
-			password.value = getCookie("password");
-		} 
-		
-		function setCoookies(username,password,exdays){
-			var d = new Date();
-			d.setTime(d.getTime()+(exdays*24*60*60*1000));
-			var expires = "expires="+d.toGMTString();
-			console.log(expires);
-			document.cookie="username =" +username.toString()+ ";expires="+d.toGMTString();
-			document.cookie="password =" +password.toString()+ ";expires="+d.toGMTString();
-			// document.cookie="username ="+username+";password = "+ password + ";" + expires;
-		}	
-	     
-		function check(){
-			var Checkbox = document.querySelector('#rememberMe')
-			var username = document.querySelector('#username');
-			var password = document.querySelector('#password');
-			if (Checkbox.checked == true){
-			 	alert(username.value);
-				alert(password.value);
-				setCoookies(username.value,password.value,30);
-			}
-			else{
-				 document.cookie = "username=; expires= 01 Jan 1970 00:00:00 GMT";
-				 document.cookie = "password=;";
-				 document.cookie = "username=; expires= 01 Jan 1970 00:00:00 GMT";
-				 document.cookie = "username=;";
-			}
-			if(username.value == 'curry'){
-				if(password.value == 'curry'){
-					window.location.href='index.html';
-				}
-				else{
-					alert("password is wrong")
-				}
-			}
-			else{
-				alert("username is wrong")
-			}
-		}
-			
-			
-			
-			
-		</script>
-		
-		
-	</head>	
+	</head>
 	<body>
-        <div class="enroll">
-            <h1>enroll</h1>
-            <h2>username(curry)</h2>
-            <input type="text" id="username" placeholder="请输入登入名"> <br/> 
-            <h2>password(curry)</h2>
-            <input type="text" id="password" placeholder="请输入密码"> <br/> <br/> 
-            <p>
-                <input type="checkbox" id="rememberMe">
-                <span style="vertical-align: middle">记住我</span>
-            </p>
-			<button onclick='check()' id="log">登陆</a></button>
-        </div>
+		<!-- 动画1 -->
+		<figure class="effect1">
+			<img src="img/pic1.jpg"/>
+			<h2>平移动画</h2>
+			<p>最简单的平移动画</p>
+		</figure>
+
 		
-
-
 	</body>
-
 </html>
+

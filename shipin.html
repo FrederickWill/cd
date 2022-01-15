@@ -5,7 +5,9 @@
 		<title>首页~</title>
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/page-blog.css" />
-		
+		<link rel="icon" href="img/coldplay.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="img/coldplay.ico" type="image/x-icon" />
+        <link rel="bookmark" href="img/coldplay.ico" type="image/x-icon" />
 		<script type="text/javascript">
 		</script>
 		
@@ -94,5 +96,22 @@
 	    <!--底部设计结束-->
 	    </div>
 	</div>
+	<script>
+		var myVideo = document.getElementById("media");
+		myVideo.play();
+		document.addEventListener("visibilitychange", function () {
+		if (document.visibilityState == "visible") {
+		//do something
+		//继续视频播放
+		myVideo.play();
+		}
+		if (document.visibilityState == "hidden") {
+		//do something else
+		//暂停视频播放
+		myVideo.pause();
+		}
+		});
+		
+		</script>
 	</body>
 </html>
